@@ -1,0 +1,9 @@
+<div *ngFor="let item of brawlStarsData">
+    <h3>{{item}}</h3>
+    <ul>
+      <li *ngFor="let starPower of item.starPowers">{{ starPower }}</li>
+    </ul>
+    <ul>
+      <li *ngFor="let gadget of item.gadgets">{{ gadget }}</li>
+    </ul>
+  </div>
