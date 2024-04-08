@@ -1,9 +1,18 @@
-<div *ngFor="let item of brawlStarsData">
-    <h3>{{item}}</h3>
-    <ul>
-      <li *ngFor="let starPower of item.starPowers">{{ starPower }}</li>
-    </ul>
-    <ul>
-      <li *ngFor="let gadget of item.gadgets">{{ gadget }}</li>
-    </ul>
-  </div>
+<div>
+  <h3>Liste des Brawlers :</h3>
+  <ul *ngFor="let brawler of listeBrawlers[0].items">
+    <li>
+      <strong>Nom :</strong> {{ brawler.name }}
+      <ul>
+        <li *ngFor="let starPower of brawler.starPowers">
+          <strong>Star Power :</strong> {{ starPower.name }}
+        </li>
+      </ul>
+      <ul>
+        <li *ngFor="let gadget of brawler.gadgets">
+          <strong>Gadget :</strong> {{ gadget.name }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
