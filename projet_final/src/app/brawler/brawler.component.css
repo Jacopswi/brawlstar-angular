@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'BrawlStarFont';
+    src: url('../../assets/fonts/Nougat-ExtraBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+* {
+    font-family: 'BrawlStarFont', sans-serif;
+} 
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -9,5 +21,38 @@
     margin: 0 1% 2% 1%;
     border: 1px solid #CCCCCC;
     padding: 1%;
+    background-color:rgb(187, 235, 235);
+    border-radius: 10px;
 }
 
+
+
+.common-bg {
+    border: 5px solid #b9eaff;
+    border-radius: 10px;
+}
+
+.rare-bg {
+    border: 5px solid #68fd58;
+    border-radius: 10px;
+}
+
+.super_rare-bg {
+    border: 5px solid #0b4b93;
+    border-radius: 10px;
+}
+
+.mythic-bg {
+    border: 5px solid #fe5e72;
+    border-radius: 10px;
+}
+
+.epic-bg {
+    border: 5px solid #7f0282;
+    border-radius: 10px;
+}
+
+.legendary-bg {
+    border: 5px solid #fff11e;
+    border-radius: 10px;
+}
