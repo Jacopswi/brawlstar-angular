@@ -2,6 +2,10 @@
 
 <h3>Liste des Brawlers :</h3>
 
+<button (click)="sortBrawlers()">Trier par nom(A-Z)</button>
+<button (click)="sortBrawlersReverse()">Trier par nom(Z-A)</button>
+<button (click)="sortId()">Trier par date de sortie</button>
+
 <div class="card-container">
   <ul class="cards" *ngFor="let brawler of listeBrawlers[0].items">
     <div class="container">
