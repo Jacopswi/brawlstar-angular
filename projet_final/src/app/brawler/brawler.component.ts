@@ -9,17 +9,16 @@ import brawlers from '../../assets/API_Brawlers.json';
 export class BrawlerComponent implements OnInit {
   public listeBrawlers: any[] = [];
   public sortedBrawlers: any[] = [];
+  public searchTerm : string = "";
 
   constructor() {}
 
   ngOnInit() {
-    // Initialiser les données ici, par exemple :
     this.listeBrawlers = brawlers;
     this.sortedBrawlers = this.listeBrawlers[0].items; 
   }
 
   sortBrawlers() {
-    // Tri par nom croissant
     this.sortedBrawlers.sort((a, b) => {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();
@@ -30,7 +29,6 @@ export class BrawlerComponent implements OnInit {
   }
 
   sortBrawlersReverse() {
-    // Tri par nom croissant
     this.sortedBrawlers.sort((a, b) => {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();
@@ -44,7 +42,6 @@ export class BrawlerComponent implements OnInit {
 
 
   sortId() {
-    // Tri par nom croissant
     this.sortedBrawlers.sort((a, b) => {
       const Id1 = a.id;
       const Id2 = b.id;
@@ -55,13 +52,12 @@ export class BrawlerComponent implements OnInit {
   }
 
   getRarityClass(rarity: string): string {
-    // Déterminer la classe CSS en fonction de la rareté du Brawler
     switch (rarity) {
       case 'common':
         return 'common-bg';
 
       case 'rare':
-        return 'epic-bg';
+        return 'rare-bg';
 
       case 'super_rare':
         return 'super_rare-bg';
@@ -120,6 +116,17 @@ export class BrawlerComponent implements OnInit {
     });
   }
 
+  filterBrawlers(): any[] {
+    return this.sortedBrawlers.filter(brawler =>
+      brawler.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
+  updateSearchTerm(event: any): void {
+    this.searchTerm = event.target.value;
+  }
+
+  
 
 
 }

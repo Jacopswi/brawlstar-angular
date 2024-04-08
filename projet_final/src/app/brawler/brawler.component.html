@@ -1,29 +1,35 @@
 <link rel="stylesheet" href="../../../bootstrap/bootstrap.min.css">
 
-<h3>Liste des Brawlers :</h3>
 
-<button (click)="sortBrawlers()">Trier par nom(A-Z)</button>
-<button (click)="sortBrawlersReverse()">Trier par nom(Z-A)</button>
-<button (click)="sortId()">Trier par date de sortie</button>
-<button (click)="sortRarity()">Trier par rareté (croissant)</button>
-<button (click)="sortRarityReverse()">Trier par rareté (décroissant)</button>
+    <h3>Liste des Brawlers :</h3>
+
+  <button (click)="sortBrawlers()">Trier par nom(A-Z)</button>
+  <button (click)="sortBrawlersReverse()">Trier par nom(Z-A)</button>
+  <button (click)="sortId()">Trier par date de sortie</button>
+  <button (click)="sortRarity()">Trier par rareté (croissant)</button>
+  <button (click)="sortRarityReverse()">Trier par rareté (décroissant)</button>
 
 
-<strong>Nombre de brawlers = </strong> {{listeBrawlers[0].items.length}}
+  <strong>Nombre de brawlers = </strong> {{listeBrawlers[0].items.length}}
+  <br>
+  <input type="text" placeholder="Rechercher par nom" (input)="updateSearchTerm($event)">
 
-<div class="card-container">
-  <ul class="cards" *ngFor="let brawler of listeBrawlers[0].items">
-    <div class="container" [ngClass]="getRarityClass(brawler.rarity)">
-      <img alt="brawler" src="../../assets/img/{{ brawler.name.toLowerCase() }}.jpg" width="100%">
-    </div>
-    <strong>Nom :</strong> {{ brawler.name.toLowerCase() }}
-    <br>
-    <strong>Rareté :</strong> {{ brawler.rarity }}
-    <div class="powers" *ngFor="let starPower of brawler.starPowers">
-      <strong>Star Power :</strong> {{ starPower.name.toLowerCase() }}
-    </div>
-    <div class="gadgets" *ngFor="let gadget of brawler.gadgets">
-      <strong>Gadget :</strong> {{ gadget.name.toLowerCase() }}
-    </div>
-  </ul>
-</div>
+  <div class="card-container">
+    <ul class="cards" *ngFor="let brawler of filterBrawlers()" [ngClass]="getRarityClass(brawler.rarity)">
+      <div class="container">
+        <img alt="brawler" src="../../assets/img/{{ brawler.name.toLowerCase() }}.jpg" width="100%">
+      </div>
+      <strong>Nom :</strong> {{ brawler.name.toLowerCase() }}
+      <br>
+      <strong>Rareté :</strong> {{ brawler.rarity }}
+      <div class="powers" *ngFor="let starPower of brawler.starPowers">
+        <strong>Pouvoirs Stars :</strong> {{ starPower.name.toLowerCase() }}
+      </div>
+      <div class="gadgets" *ngFor="let gadget of brawler.gadgets">
+        <strong>Gadgets :</strong> {{ gadget.name.toLowerCase() }}
+      </div>
+    </ul>
+  </div>
+  
+
+
