@@ -1,4 +1,18 @@
-.header {
+header {
     position: relative; 
     z-index: 99; 
+    display: flex;
+    color : white;
+    align-items: center;
+}
+
+
+a{
+    display: flex;
+    color : white;
+    align-items: center;
+}
+
+a:hover{
+    color : cyan
 }
