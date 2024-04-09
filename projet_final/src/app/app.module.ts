@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { JoueurComponent } from './joueur/joueur.component';
 import { ClubComponent } from './club/club.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ClubComponent } from './club/club.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
