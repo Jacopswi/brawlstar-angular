@@ -9,6 +9,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { JoueurComponent } from './joueur/joueur.component';
 import { ClubComponent } from './club/club.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EventComponent } from './event/event.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrawlerComponent,
     HeaderComponent,
     JoueurComponent,
-    ClubComponent
+    ClubComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

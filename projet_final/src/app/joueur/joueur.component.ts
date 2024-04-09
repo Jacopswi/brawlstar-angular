@@ -17,7 +17,6 @@ export class JoueurComponent implements OnInit{
   ngOnInit(): void {
     this.http.get('https://api.brawlapi.com/v1/gamemodes').subscribe(data => {
       this.gamemodes = data;
-      console.log(this.gamemodes); 
       this.listeModes = this.gamemodes.list
       this.sortedModes = this.listeModes
     });

@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="../../../bootstrap/bootstrap.min.css">
+
+<div class="background-container"></div>
+
+<div class="content">
+  <h3>Liste des modes de jeux en cours :</h3>
+
+  <br>
+  <div class="card-container">
+    <ul class="cards" *ngFor="let event of events.active" [ngStyle]="{ 'background-color': event.map.gameMode.bgColor }">
+      <div class="container">
+        <img alt="map" [src]="event.map.gameMode.imageUrl" width="100%">
+      </div>
+      <strong>Jeu :</strong> {{ event.map.gameMode.name }}
+      <br>
+      <strong>Map :</strong> {{ event.map.name }}
+      <br>
+      <div class="container2">
+        <img alt="map" [src]="event.map.imageUrl" width="100%">
+      </div>
+      <strong>Top brawlers : </strong> <br>
+      1 : {{getNameFromId(event.map.stats[0].brawler)}} || Winrate : {{event.map.stats[0].winRate}}
+      <br>
+      2 : {{getNameFromId(event.map.stats[1].brawler)}} || Winrate : {{event.map.stats[1].winRate}}
+      <br>
+      3 : {{getNameFromId(event.map.stats[2].brawler)}} || Winrate : {{event.map.stats[2].winRate}}
+
+
+    </ul>
+  </div>
+</div>
