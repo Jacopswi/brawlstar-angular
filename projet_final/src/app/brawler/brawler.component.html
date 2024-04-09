@@ -5,16 +5,16 @@
 <div class="content">
   <h3>Liste des Brawlers :</h3>
 
-  <button (click)="sortBrawlers()">Trier par nom(A-Z)</button>
-  <button (click)="sortBrawlersReverse()">Trier par nom(Z-A)</button>
-  <button (click)="sortId()">Trier par date de sortie</button>
-  <button (click)="sortRarity()">Trier par rareté (croissant)</button>
-  <button (click)="sortRarityReverse()">Trier par rareté (décroissant)</button>
+  <button class="btn" (click)="sortBrawlers()">Trier par nom (A-Z)</button>
+  <button class="btn" (click)="sortBrawlersReverse()">Trier par nom (Z-A)</button>
+  <button class="btn" (click)="sortId()">Trier par date de sortie</button>
+  <button class="btn" (click)="sortRarity()">Trier par rareté (croissant)</button>
+  <button class="btn" (click)="sortRarityReverse()">Trier par rareté (décroissant)</button>
 
 
   <strong>Nombre de brawlers = </strong> {{listeBrawlers[0].items.length}}
   <br>
-  <input type="text" placeholder="Rechercher par nom" (input)="updateSearchTerm($event)">
+  <input class="custom-search-input" type="text" placeholder="Rechercher par nom" (input)="updateSearchTerm($event)">
 
   <div class="card-container">
     <ul class="cards" *ngFor="let brawler of filterBrawlers()" [ngClass]="getRarityClass(brawler.rarity)">

@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="./header.component.css">
+<link rel="stylesheet" href="../../../bootstrap/bootstrap.min.css">
 
 <header>
     <h1>Brawl Stars Info</h1>
-    <nav>
-        <ul>
-            <li><a routerLink="/">Brawlers</a></li>
-            <li><a routerLink="/joueur">Joueur</a></li>
-            <li><a routerLink="/club">Clubs</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse justify-content-around">
+            <div class="nav-item">
+                <a class="btn" routerLink="/">Brawlers</a>
+            </div>
+            <div class="nav-item">
+                <a class="btn" routerLink="/joueur">Joueur</a>
+            </div>
+            <div class="nav-item">
+                <a class="btn" routerLink="/club">Clubs</a>
+            </div>
+        </div>
     </nav>
 </header>

@@ -1,11 +1,14 @@
 header {
     position: relative; 
-    z-index: 99; 
-    display: flex;
+    z-index: 99;
     color : white;
     align-items: center;
 }
 
+.btn {
+    z-index: 100;
+    outline: auto !important;
+}
 
 a{
     display: flex;
