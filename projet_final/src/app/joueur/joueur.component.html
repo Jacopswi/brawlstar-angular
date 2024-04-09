@@ -3,11 +3,13 @@
 <div class="background-container"></div>
 
 <div class="content">
-  <h3>Liste des Brawlers :</h3>
+  <h3>Liste des modes de jeu :</h3>
 
-  <button class="btn">Trier par nom (A-Z)</button>
-  <button class="btn">Trier par nom (Z-A)</button>
-  <button class="btn">Trier par identifiant</button>
+  <button class="btn" (click)="sortModes()">Trier par nom (A-Z)</button>
+  <button class="btn" (click)="sortModesReverse()">Trier par nom (Z-A)</button>
+  <button class="btn" (click)="sortId()">Trier par identifiant</button>
+  <br>
+  <input class="custom-search-input" type="text" placeholder="Rechercher par nom" (input)="updateSearchTerm($event)">
 
 
 
@@ -15,11 +17,11 @@
   <br>
   
   <div class="card-container">
-    <ul class="cards" *ngFor="let modes of gamemodes.list">
+    <ul class="cards" *ngFor="let modes of filterModes()" [ngStyle]="{ 'background-color': modes.bgColor }">
       <div class="container">
         <img alt="brawler" [src]="modes.imageUrl" width="100%">
       </div>
-      <strong>Nom :</strong> {{ modes.hash }}
+      <strong>Nom :</strong> {{ modes.name }}
       <br>
       <strong>Description :</strong> {{ modes.description }}
     </ul>
