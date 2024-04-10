@@ -20,10 +20,13 @@
       </div>
       <strong>Top brawlers : </strong> <br>
       1 : {{getNameFromId(event.map.stats[0].brawler)}} || Winrate : {{event.map.stats[0].winRate}}
+      <img alt="brawler" src="../../assets/img/{{ getNameFromId(event.map.stats[0].brawler).toLowerCase() }}.jpg" width="30%">
       <br>
       2 : {{getNameFromId(event.map.stats[1].brawler)}} || Winrate : {{event.map.stats[1].winRate}}
+      <img alt="brawler" src="../../assets/img/{{ getNameFromId(event.map.stats[1].brawler).toLowerCase() }}.jpg" width="30%">
       <br>
       3 : {{getNameFromId(event.map.stats[2].brawler)}} || Winrate : {{event.map.stats[2].winRate}}
+      <img alt="brawler" src="../../assets/img/{{ getNameFromId(event.map.stats[2].brawler).toLowerCase() }}.jpg" width="30%">
 
 
     </ul>
